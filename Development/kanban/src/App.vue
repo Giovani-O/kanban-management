@@ -4,7 +4,25 @@
       v-model="drawer"
       app
     >
-      <!--  -->
+      <v-row>
+        <v-col cols="12">
+          <v-btn block class="mx-2 px-4 py-2">
+            Quadros
+          </v-btn>
+        </v-col>
+
+        <v-col cols="12">
+          <v-btn block class="mx-2 px-4 py-2">
+            Forum de Disciplinas
+          </v-btn>
+        </v-col>
+
+        <v-col cols="12">
+          <v-btn block class="mx-2 px-4 py-2">
+            Configurações
+          </v-btn>
+        </v-col>
+      </v-row>
     </v-navigation-drawer>
 
     <v-app-bar app>
