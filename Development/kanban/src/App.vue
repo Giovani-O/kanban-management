@@ -49,8 +49,10 @@
       <v-toolbar-title>Application</v-toolbar-title>
     </v-app-bar>
 
-    <v-main>
-      <!--  -->
+    <v-main 
+      class="mb-16 pb-10"
+    >
+      <router-view></router-view>
     </v-main>
   </v-app>
 </template>
