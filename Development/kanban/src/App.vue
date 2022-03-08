@@ -6,7 +6,11 @@
     >
       <v-row>
         <v-col cols="12">
-          <v-btn depressed class="mx-2 px-4 py-2">
+          <v-btn 
+            depressed 
+            class="mx-2 px-4 py-2"
+            @click="goToKanban()"
+          >
             <v-icon left>
               mdi-view-dashboard
             </v-icon>
@@ -15,7 +19,7 @@
         </v-col>
 
         <v-col cols="12">
-          <v-btn depressed class="mx-2 px-4 py-2">
+          <v-btn depressed class="mx-2 px-4 py-2" @click="goToForumDash()">
           <v-icon left>
               mdi-forum
           </v-icon>
@@ -58,7 +62,22 @@
 </template>
 
 <script>
+
+
   export default {
-    data: () => ({ drawer: null }),
+    data() { 
+      return {
+        drawer: null,
+      }
+    },
+    methods: {
+      goToKanban() { 
+        this.$router.push('/');
+      },
+      goToForumDash() { 
+        this.$router.push('/forum/dashboard');
+      }
+    }
   }
+
 </script>
