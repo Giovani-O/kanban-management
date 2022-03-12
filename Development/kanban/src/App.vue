@@ -5,52 +5,83 @@
       app
     >
       <v-row>
+        <!-- Quadros Kanban -->
         <v-col cols="12">
           <v-btn 
-            depressed 
-            class="mx-2 px-4 py-2"
+            depressed
+            class="sidebar-btn mx-0 px-4 py-4"
             @click="goToKanban()"
           >
             <v-icon left>
               mdi-view-dashboard
             </v-icon>
             Quadros
+            <v-spacer />
           </v-btn>
         </v-col>
 
+        <!-- Forum de disciplinas -->
         <v-col cols="12">
-          <v-btn depressed class="mx-2 px-4 py-2" @click="goToForumDash()">
-          <v-icon left>
-              mdi-forum
-          </v-icon>
-            Forum de Disciplinas
+          <v-btn 
+            depressed 
+            class="sidebar-btn mx-0 px-4 py-4" 
+            @click="goToForumDash()"
+          >
+            <v-icon left>
+                mdi-forum
+            </v-icon>
+              Forum de Disciplinas
+              <v-spacer />
           </v-btn>
         </v-col>
 
+        <!-- Configurações -->
         <v-col cols="12">
-          <v-btn depressed class="mx-2 px-4 py-2">
-          <v-icon left>
-              mdi-cog
-          </v-icon>
-            Configurações
-          </v-btn>
-        </v-col>
-
-        <v-col cols="12" align-self="end">
-          <v-btn depressed class="mx-2 px-4 py-2">
-          <v-icon left>
-              mdi-exit-run
-          </v-icon>
-            Sair
+          <v-btn 
+          depressed 
+          class="sidebar-btn mx-0 px-4 py-4" 
+          @click="goToSettingsDash()"
+        >
+            <v-icon left>
+                mdi-cog
+            </v-icon>
+              Configurações
+              <v-spacer />
           </v-btn>
         </v-col>
       </v-row>
+
+      <!-- Sair -->
+      <v-footer
+        app 
+        bottom 
+        fixed 
+        padless
+      >
+        <v-row>
+          <v-col 
+            cols="12" 
+            class="d-flex align-end"
+          >
+            <v-btn 
+              depressed 
+              class="sidebar-btn mx-0 px-4 py-4"
+            >
+              <v-icon left>
+                  mdi-exit-run
+              </v-icon>
+                Sair
+                <v-spacer />
+            </v-btn>
+          </v-col>
+        </v-row>
+      </v-footer>
     </v-navigation-drawer>
 
     <v-app-bar app>
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
 
-      <v-toolbar-title>Application</v-toolbar-title>
+      <v-toolbar-title>Kanban</v-toolbar-title>
     </v-app-bar>
 
     <v-main 
@@ -62,8 +93,7 @@
 </template>
 
 <script>
-
-
+// JavaScript, lógica do front-end
   export default {
     data() { 
       return {
@@ -76,8 +106,18 @@
       },
       goToForumDash() { 
         this.$router.push('/forum/dashboard');
+      },
+      goToSettingsDash() { 
+        this.$router.push('/settings/dashboard');
       }
     }
   }
 
 </script>
+
+<style>
+  .sidebar-btn {
+    width: 100% !important;
+    text-align: left !important;
+  }
+</style>
