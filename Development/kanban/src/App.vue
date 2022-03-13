@@ -50,32 +50,25 @@
           </v-btn>
         </v-col>
       </v-row>
-
+    
       <!-- Sair -->
-      <v-footer
-        app 
-        bottom 
-        fixed 
-        padless
-      >
-        <v-row>
-          <v-col 
-            cols="12" 
-            class="d-flex align-end"
+      <v-row>
+        <v-col 
+          cols="12" 
+          class="d-flex align-end"
+        >
+          <v-btn 
+            depressed 
+            class="sidebar-btn mx-0 px-4 py-4"
           >
-            <v-btn 
-              depressed 
-              class="sidebar-btn mx-0 px-4 py-4"
-            >
-              <v-icon left>
-                  mdi-exit-run
-              </v-icon>
-                Sair
-                <v-spacer />
-            </v-btn>
-          </v-col>
-        </v-row>
-      </v-footer>
+            <v-icon left>
+                mdi-exit-run
+            </v-icon>
+              Sair
+              <v-spacer />
+          </v-btn>
+        </v-col>
+      </v-row>
     </v-navigation-drawer>
 
     <v-app-bar app>
