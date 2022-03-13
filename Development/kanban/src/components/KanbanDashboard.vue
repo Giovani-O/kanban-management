@@ -6,7 +6,7 @@
       <v-row>
         <v-col cols="4" v-for="item in items" :key="item.code">
           <!-- Adicionar aqui o componente representando o card -->
-          Teste
+          <kanban-card></kanban-card>
         </v-col>
       </v-row>
     </v-card>
@@ -14,6 +14,7 @@
 </template>
 
 <script>
+import KanbanCard from './KanbanCard.vue';
   export default {
     name: 'KanbanDashboard',
     data() {
@@ -41,6 +42,9 @@
           },
         ]
       }
+    },
+    components: {
+      KanbanCard,
     }
   }
 </script>
