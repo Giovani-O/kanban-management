@@ -8,6 +8,11 @@
           <!-- Adicionar aqui o componente representando o card -->
           <KanbanCard 
             :cardName="item.name"
+            :subjects="item.subjects"
+            :activities="item.activities"
+            :students="item.students"
+            :progress="item.progress"
+            :add="item.add"
           ></KanbanCard>
         </v-col>
       </v-row>
@@ -25,30 +30,47 @@ import KanbanCard from './KanbanCard.vue';
           {
             code: 1,
             name: 'Quadro 1',
+            subjects: 'Subjects',
+            activities: 'Activities',
+            students: 'Students',
+            progress: 'Progress',
           },
           {
             code: 2,
             name: 'Quadro 2',
+            subjects: 'Subjects',
+            activities: 'Activities',
+            students: 'Students',
+            progress: 'Progress',
           },
           {
             code: 3,
             name: 'Quadro 3',
+            subjects: 'Subjects',
+            activities: 'Activities',
+            students: 'Students',
+            progress: 'Progress',
           },
           {
             code: 4,
             name: 'Quadro 4',
+            subjects: 'Subjects',
+            activities: 'Activities',
+            students: 'Students',
+            progress: 'Progress',
           },
           {
             code: 5,
             name: 'Quadro 5',
+            subjects: 'Subjects',
+            activities: 'Activities',
+            students: 'Students',
+            progress: 'Progress',
           },
           {
             code: 6,
             name: 'Quadro 6',
-          },
-          {
-            code: 7,
-            name: 'Quadro 7',
+            Add: 'Add',
           },
         ]
       }
