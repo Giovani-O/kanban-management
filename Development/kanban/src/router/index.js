@@ -12,21 +12,25 @@ const routes = [
     path: '/',
     name: 'Quadros Kanban',
     component: KanbanDashboard,
+    props: true,
   },
   {
     path: '/forum/dashboard',
     name: 'Forum de Disciplinas',
     component: ForumDashboard,
+    props: true,
   },
   {
     path: '/settings/dashboard',
     name: 'Configurações',
     component: SettingsDashboard,
+    props: true,
   },
   {
     path: '/login',
     name: 'Login',
     component: Login,
+    props: true,
   }
 ]
 
