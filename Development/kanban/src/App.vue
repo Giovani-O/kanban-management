@@ -1,6 +1,7 @@
 <template>
-  <v-app id="inspire">
+  <v-app>
     <v-navigation-drawer
+      class="frame-color"
       v-model="drawer"
       app
     >
@@ -56,7 +57,7 @@
       </v-row>
     </v-navigation-drawer>
 
-    <v-app-bar app>
+    <v-app-bar app class="frame-color">
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
 
       <v-toolbar-title>Kanban</v-toolbar-title>
@@ -91,8 +92,13 @@
 </script>
 
 <style>
+  .frame-color {
+    background-color: #111111 !important;
+  }
+
   .sidebar-btn {
     width: 100% !important;
     text-align: left !important;
+    background-color: transparent !important;
   }
 </style>
