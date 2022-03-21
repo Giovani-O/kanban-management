@@ -20,21 +20,6 @@
           </v-btn>
         </v-col>
 
-        <!-- Forum de disciplinas -->
-        <v-col cols="12">
-          <v-btn 
-            depressed 
-            class="sidebar-btn mx-0 px-4 py-4" 
-            @click="goToForumDash()"
-          >
-            <v-icon left>
-                mdi-forum
-            </v-icon>
-              Forum de Disciplinas
-              <v-spacer />
-          </v-btn>
-        </v-col>
-
         <!-- Configurações -->
         <v-col cols="12">
           <v-btn 
@@ -96,9 +81,6 @@
     methods: {
       goToKanban() { 
         this.$router.push('/');
-      },
-      goToForumDash() { 
-        this.$router.push('/forum/dashboard');
       },
       goToSettingsDash() { 
         this.$router.push('/settings/dashboard');

@@ -15,6 +15,25 @@
             :add="item.add"
           ></KanbanCard>
         </v-col>
+
+        <v-col cols="4">
+          <v-card color="transparent" flat outlined class="mr-4">
+            <v-row>
+              <v-col cols="12" class="text-center ma-2">
+                <v-card>
+                  <span>Adicionar quadro</span>
+                  <v-icon
+                    large
+                    color="white"
+                  >
+                    mdi-domain
+                  </v-icon>
+                </v-card>
+              </v-col>
+            </v-row>
+          </v-card>
+        </v-col>
+        
       </v-row>
     </v-card>
   </v-container>
@@ -22,6 +41,7 @@
 
 <script>
 import KanbanCard from './KanbanCard.vue';
+
   export default {
     name: 'KanbanDashboard',
     data() {
@@ -66,12 +86,7 @@ import KanbanCard from './KanbanCard.vue';
             activities: 'Activities',
             students: 'Students',
             progress: 'Progress',
-          },
-          {
-            code: 6,
-            name: 'Quadro 6',
-            Add: 'Add',
-          },
+          }
         ]
       }
     },
