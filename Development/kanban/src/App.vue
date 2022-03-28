@@ -1,9 +1,10 @@
 <template>
   <v-app>
     <v-navigation-drawer
-      class="frame-color"
+      class="frame-color pt-4"
       v-model="drawer"
       app
+      clipped
     >
       <v-row>
         <!-- Quadros Kanban -->
@@ -57,7 +58,7 @@
       </v-row>
     </v-navigation-drawer>
 
-    <v-app-bar app class="frame-color">
+    <v-app-bar app class="frame-color" clipped-left>
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
 
       <v-toolbar-title>Kanban</v-toolbar-title>

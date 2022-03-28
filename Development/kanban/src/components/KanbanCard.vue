@@ -1,6 +1,6 @@
 <template>
   <v-container>
-      <v-card class="pa-4" :color="selectColor">
+      <v-card class="pa-4 card-height" :color="selectColor">
         <v-row>
           <v-col 
             cols="12" 
@@ -91,5 +91,9 @@
 <style>
   h4, p {
     text-shadow: 4px 2px 6px #000000 !important;
+  }
+
+  .card-height {
+    height: 30vh !important;
   }
 </style>

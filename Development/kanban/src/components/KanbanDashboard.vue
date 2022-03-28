@@ -20,13 +20,13 @@
           <v-card color="transparent" flat outlined class="mr-4">
             <v-row>
               <v-col cols="12" class="text-center ma-2">
-                <v-card>
+                <v-card class="kanban-card">
                   <span>Adicionar quadro</span>
                   <v-icon
                     large
                     color="white"
                   >
-                    mdi-domain
+                    mdi-plus-box-outline
                   </v-icon>
                 </v-card>
               </v-col>
@@ -100,3 +100,9 @@ import KanbanCard from './KanbanCard.vue';
     }
   }
 </script>
+
+<style>
+  .kanban-card {
+    height: 30vh !important;
+  }
+</style>

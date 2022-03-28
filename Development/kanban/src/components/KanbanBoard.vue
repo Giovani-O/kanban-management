@@ -4,51 +4,51 @@
     <v-card color="transparent" flat class="pa-4">
       <v-row>
         <v-col cols="4">
-          <v-card class="pa-1">
-            <v-card class="activity">
+          <h3>
+            Em fila 
+            <v-btn fab x-small depressed color="transparent">
+              <v-icon>mdi-plus</v-icon>
+            </v-btn>
+          </h3>
+
+          <v-card class="pa-1 column-card">
+            <v-card draggable class="activity" v-for="item in todo" :key="item.code">
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-            </v-card>
-            <v-card class="activity">
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-            </v-card>
-            <v-card class="activity">
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                {{ item.text }}
               </p>
             </v-card>
           </v-card>
         </v-col>
 
         <v-col cols="4">
-          <v-card class="pa-1">
-            <v-card class="activity">
+          <h3>
+            Em progresso
+            <v-btn fab x-small depressed color="transparent">
+              <v-icon>mdi-plus</v-icon>
+            </v-btn>
+          </h3>
+
+          <v-card class="pa-1 column-card">
+            <v-card draggable class="activity" v-for="item in progress" :key="item.code">
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-            </v-card>
-            <v-card class="activity">
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                {{ item.text }}
               </p>
             </v-card>
           </v-card>
         </v-col>
 
         <v-col cols="4">
-          <v-card class="pa-1">
-            <v-card class="activity">
+          <h3>
+            Finalizados
+            <v-btn fab x-small depressed color="transparent">
+              <v-icon>mdi-plus</v-icon>
+            </v-btn>
+          </h3>
+
+          <v-card class="pa-1 column-card">
+            <v-card draggable class="activity" v-for="item in finished" :key="item.code">
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                {{ item.text }}
               </p>
             </v-card>
           </v-card>
@@ -63,7 +63,43 @@
     name: 'KanbanBoard',
     data() {
       return {
-
+        // Em fila
+        todo: [
+          {
+            code: 1,
+            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+          },
+          {
+            code: 1,
+            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+          },
+          {
+            code: 1,
+            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+          },
+          {
+            code: 1,
+            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+          },
+        ],
+        // Em progresso
+        progress: [
+          {
+            code: 1,
+            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+          },
+          {
+            code: 1,
+            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+          },
+        ],
+        // Concluído
+        finished: [
+          {
+            code: 1,
+            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+          },
+        ]
       }
     }
   }
@@ -71,8 +107,16 @@
 
 <style>
   .activity {
-    background-color: rgba(255, 255, 255, .2) !important;
+    background-color: rgba(255, 255, 255, .05) !important;
     padding: 12px 12px !important;
     margin-top: 4px !important;
+  }
+
+  .activity p {
+    text-shadow: none !important;
+  }
+
+  .column-card {
+    height: auto !important;
   }
 </style>
