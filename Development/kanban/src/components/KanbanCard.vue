@@ -94,6 +94,6 @@
   }
 
   .card-height {
-    height: 30vh !important;
+    height: 190px !important;
   }
 </style>

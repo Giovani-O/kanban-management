@@ -4,8 +4,7 @@
 
     <v-card class="mt-6" flat color="transparent">
       <v-row>
-        <v-col cols="4" v-for="item in items" :key="item.code" @click="goToBoard">
-          <!-- Adicionar aqui o componente representando o card -->
+        <v-col cols="4" v-for="item in items" :key="item.code" @click="goToBoard()">
           <KanbanCard 
             :cardName="item.name"
             :subjects="item.subjects"
@@ -103,6 +102,6 @@ import KanbanCard from './KanbanCard.vue';
 
 <style>
   .kanban-card {
-    height: 30vh !important;
+    height: 190px !important;
   }
 </style>
