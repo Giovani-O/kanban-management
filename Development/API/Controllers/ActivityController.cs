@@ -72,11 +72,10 @@ namespace API.Controllers
       }
     }
 
-    [HttpPut("Edit/{id}")]
+    [HttpPost("Edit")]
     public async Task<IActionResult> Edit(
       [FromServices] AppDBC context,
-      [FromBody] ActivitySaveVM activity,
-      [FromRoute] int id)
+      [FromBody] ActivitySaveVM activity)
     {
       // Erro 404 not found
       try
@@ -86,7 +85,7 @@ namespace API.Controllers
 
         var currentActivity =
           await context.Activities
-          .FirstOrDefaultAsync(x => x.Id == id);
+          .FirstOrDefaultAsync(x => x.Id == activity.Id);
 
         if (currentActivity == null)
           return NotFound();
