@@ -88,7 +88,7 @@ namespace API.Controllers
           await context.Activities
           .FirstOrDefaultAsync(x => x.Id == id);
 
-        if (currentActivity != null)
+        if (currentActivity == null)
           return NotFound();
 
         currentActivity.BoardId = activity.BoardId;
