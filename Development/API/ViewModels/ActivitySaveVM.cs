@@ -4,6 +4,7 @@ namespace API.ViewModels
 {
   public class ActivitySaveVM
   {
+
     [Required]
     public int BoardId { get; set; }
     

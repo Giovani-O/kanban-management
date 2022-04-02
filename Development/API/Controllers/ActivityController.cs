@@ -71,5 +71,39 @@ namespace API.Controllers
         return BadRequest();
       }
     }
+
+    [HttpPut("Edit/{id}")]
+    public async Task<IActionResult> Edit(
+      [FromServices] AppDBC context,
+      [FromBody] ActivitySaveVM activity,
+      [FromRoute] int id)
+    {
+      // Erro 404 not found
+      try
+      {
+        if (!ModelState.IsValid)
+          return BadRequest();
+
+        var currentActivity =
+          await context.Activities
+          .FirstOrDefaultAsync(x => x.Id == id);
+
+        if (currentActivity != null)
+          return NotFound();
+
+        currentActivity.BoardId = activity.BoardId;
+        currentActivity.Text = activity.Text;
+        currentActivity.Column = activity.Column;
+
+        context.Activities.Update(currentActivity);
+        await context.SaveChangesAsync();
+        return Ok();
+      }
+      catch (Exception ex)
+      {
+        Console.WriteLine(ex);
+        return BadRequest();
+      }
+    }
   }
 }
