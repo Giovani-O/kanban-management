@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -72,10 +73,11 @@ namespace API.Controllers
       }
     }
 
-    [HttpPost("Edit")]
+    [HttpPut("Edit/{1}")]
     public async Task<IActionResult> Edit(
       [FromServices] AppDBC context,
-      [FromBody] ActivitySaveVM activity)
+      [FromBody] ActivitySaveVM activity,
+      [FromRoute] int id)
     {
       // Erro 404 not found
       try
@@ -85,7 +87,7 @@ namespace API.Controllers
 
         var currentActivity =
           await context.Activities
-          .FirstOrDefaultAsync(x => x.Id == activity.Id);
+          .FirstOrDefaultAsync(x => x.Id == id);
 
         if (currentActivity == null)
           return NotFound();
