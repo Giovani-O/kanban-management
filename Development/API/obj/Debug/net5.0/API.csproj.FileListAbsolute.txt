@@ -47,3 +47,9 @@ C:\Users\Work\desktop\Projeto\proj_int_2022-grupo-04\Development\api\obj\Debug\n
 C:\Users\Work\desktop\Projeto\proj_int_2022-grupo-04\Development\api\obj\Debug\net5.0\API.pdb
 C:\Users\Work\desktop\Projeto\proj_int_2022-grupo-04\Development\api\obj\Debug\net5.0\API.genruntimeconfig.cache
 C:\Users\Work\desktop\Projeto\proj_int_2022-grupo-04\Development\api\obj\Debug\net5.0\ref\API.dll
+C:\Users\Work\Desktop\Projeto\proj_int_2022-grupo-04\Development\API\bin\Debug\net5.0\System.Web.Cors.dll
+C:\Users\Work\Desktop\Projeto\proj_int_2022-grupo-04\Development\API\bin\Debug\net5.0\System.Net.Http.Formatting.dll
+C:\Users\Work\Desktop\Projeto\proj_int_2022-grupo-04\Development\API\bin\Debug\net5.0\System.Web.Http.dll
+C:\Users\Work\Desktop\Projeto\proj_int_2022-grupo-04\Development\API\bin\Debug\net5.0\System.Web.Http.Cors.dll
+C:\Users\Work\Desktop\Projeto\proj_int_2022-grupo-04\Development\API\bin\Debug\net5.0\Newtonsoft.Json.dll
+C:\Users\Work\Desktop\Projeto\proj_int_2022-grupo-04\Development\API\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll

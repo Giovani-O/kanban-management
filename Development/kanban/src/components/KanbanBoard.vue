@@ -102,24 +102,7 @@
         loading: false,
         dialog: false,
         description: '',
-        todo: [
-          // {
-          //   code: 1,
-          //   text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-          // },
-          // {
-          //   code: 2,
-          //   text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-          // },
-          // {
-          //   code: 3,
-          //   text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-          // },
-          // {
-          //   code: 4,
-          //   text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-          // },
-        ],
+        todo: [],
         // Em progresso
         progress: [
           {
@@ -155,7 +138,6 @@
 
       getTodo(){
         this.loading = true;
-
         axios
           .get(
             `https://localhost:5001/v1/Get`,
@@ -176,16 +158,14 @@
         this.dialog = !this.dialog;
       },
       saveActivity() {
-        var activity = {
-          BoardId: '1',
-          Text: this.description,
-          Column: '1',
-        }
-
         axios
           .post(
             `https://localhost:5001/v1/Save`,
-            activity,
+            {
+              BoardId: '1',
+              Text: this.description,
+              Column: '1'
+            },
             { headers: this.axiosHeaders }
           )
           .then(response => {
