@@ -1,8 +1,10 @@
 <template>
-  <v-app id="inspire">
+  <v-app>
     <v-navigation-drawer
+      class="frame-color pt-4"
       v-model="drawer"
       app
+      clipped
     >
       <v-row>
         <!-- Quadros Kanban -->
@@ -17,21 +19,6 @@
             </v-icon>
             Quadros
             <v-spacer />
-          </v-btn>
-        </v-col>
-
-        <!-- Forum de disciplinas -->
-        <v-col cols="12">
-          <v-btn 
-            depressed 
-            class="sidebar-btn mx-0 px-4 py-4" 
-            @click="goToForumDash()"
-          >
-            <v-icon left>
-                mdi-forum
-            </v-icon>
-              Forum de Disciplinas
-              <v-spacer />
           </v-btn>
         </v-col>
 
@@ -71,7 +58,7 @@
       </v-row>
     </v-navigation-drawer>
 
-    <v-app-bar app>
+    <v-app-bar app class="frame-color" clipped-left>
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
 
       <v-toolbar-title>Kanban</v-toolbar-title>
@@ -97,9 +84,6 @@
       goToKanban() { 
         this.$router.push('/');
       },
-      goToForumDash() { 
-        this.$router.push('/forum/dashboard');
-      },
       goToSettingsDash() { 
         this.$router.push('/settings/dashboard');
       }
@@ -109,8 +93,13 @@
 </script>
 
 <style>
+  .frame-color {
+    background-color: #111111 !important;
+  }
+
   .sidebar-btn {
     width: 100% !important;
     text-align: left !important;
+    background-color: transparent !important;
   }
 </style>
