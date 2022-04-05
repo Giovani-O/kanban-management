@@ -171,6 +171,9 @@
           .then(response => {
             console.log(response);
             this.description = '';
+            this.todo = [];
+            this.getTodo();
+            this.dialog = false;
           })
           .catch(error => {
             console.log("ＳＹＳＴＥＭ　ＥＲＲＯＲ: " + error)
