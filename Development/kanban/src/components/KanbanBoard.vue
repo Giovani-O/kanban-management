@@ -6,7 +6,7 @@
         <v-col cols="4">
           <h3>
             Em fila 
-            <v-btn fab x-small depressed color="transparent" @click="addActivity()">
+            <v-btn fab x-small depressed color="transparent" @click="addActivity('0')">
               <v-icon>mdi-plus</v-icon>
             </v-btn>
           </h3>
@@ -23,13 +23,13 @@
         <v-col cols="4">
           <h3>
             Em progresso
-            <v-btn fab x-small depressed color="transparent">
+            <v-btn fab x-small depressed color="transparent" @click="addActivity('1')">
               <v-icon>mdi-plus</v-icon>
             </v-btn>
           </h3>
 
           <v-card class="pa-1 column-card">
-            <v-card draggable class="activity" v-for="item in progress" :key="item.code">
+            <v-card draggable class="activity" v-for="item in progress" :key="item.id">
               <p>
                 {{ item.text }}
               </p>
@@ -40,13 +40,13 @@
         <v-col cols="4">
           <h3>
             Finalizados
-            <v-btn fab x-small depressed color="transparent">
+            <v-btn fab x-small depressed color="transparent" @click="addActivity('2')">
               <v-icon>mdi-plus</v-icon>
             </v-btn>
           </h3>
 
           <v-card class="pa-1 column-card">
-            <v-card draggable class="activity" v-for="item in finished" :key="item.code">
+            <v-card draggable class="activity" v-for="item in finished" :key="item.id">
               <p>
                 {{ item.text }}
               </p>
@@ -98,37 +98,16 @@
           'Content-Type': 'application/json',
         },
 
-        // Em fila
         loading: false,
         dialog: false,
         description: '',
+        currentColumn: '-1',
+        // Em fila
         todo: [],
         // Em progresso
-        progress: [
-          {
-            code: 1,
-            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-          },
-          {
-            code: 2,
-            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-          },
-        ],
+        progress: [],
         // Concluído
-        finished: [
-          {
-            code: 1,
-            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-          },
-          {
-            code: 2,
-            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-          },
-          {
-            code: 3,
-            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-          },
-        ]
+        finished: []
       }
     },
     mounted() {
@@ -144,9 +123,13 @@
             { headers: this.axiosHeaders }
           )
           .then(response => {
-            this.todo = response.data;
-
-            console.log(this.todo);
+            // this.todo = response.data;
+            response.data.forEach(x => {
+              console.log(x);
+              if (x.column == '0') this.todo.push(x);
+              if (x.column == '1') this.progress.push(x);
+              if (x.column == '2') this.finished.push(x);
+            })
           })
           .catch(error => {
             console.log("ＳＹＳＴＥＭ　ＥＲＲＯＲ: " + error)
@@ -154,7 +137,8 @@
           .finally(() => this.loading = false)
       },
 
-      addActivity() {
+      addActivity(boardId) {
+        this.currentColumn = boardId;
         this.dialog = !this.dialog;
       },
       saveActivity() {
@@ -162,23 +146,24 @@
           .post(
             `https://localhost:5001/v1/Save`,
             {
-              BoardId: '1',
+              BoardId: 1,
               Text: this.description,
-              Column: '1'
+              Column: this.currentColumn,
             },
             { headers: this.axiosHeaders }
           )
           .then(response => {
-            console.log(response);
             this.description = '';
             this.todo = [];
+            this.progress = [];
+            this.finished = [];
             this.getTodo();
             this.dialog = false;
           })
           .catch(error => {
             console.log("ＳＹＳＴＥＭ　ＥＲＲＯＲ: " + error)
           })
-          .finally(() => this.loading = false)
+          .finally(() => {this.loading = false; this.currentColumn = '-1';})
       }
 
     }
