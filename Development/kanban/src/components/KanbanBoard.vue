@@ -70,7 +70,7 @@
         <template> 
           <h1 style="color: white">Descreva a atividade</h1>
           
-          <v-text-field label="Descrição" v-model="description"></v-text-field>
+          <v-text-field color="#771cff" label="Descrição" v-model="description"></v-text-field>
           <v-btn 
             dark color="transparent" 
             class="rounded-pill action-btn mr-4"
