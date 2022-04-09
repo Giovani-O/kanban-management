@@ -125,7 +125,6 @@
           .then(response => {
             // this.todo = response.data;
             response.data.forEach(x => {
-              console.log(x);
               if (x.column == '0') this.todo.push(x);
               if (x.column == '1') this.progress.push(x);
               if (x.column == '2') this.finished.push(x);

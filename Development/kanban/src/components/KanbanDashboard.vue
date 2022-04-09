@@ -4,15 +4,17 @@
 
     <v-card class="mt-6" flat color="transparent">
       <v-row>
-        <v-col cols="4" v-for="item in items" :key="item.code" @click="goToBoard()">
-          <KanbanCard 
-            :cardName="item.name"
-            :subjects="item.subjects"
-            :activities="item.activities"
-            :students="item.students"
-            :progress="item.progress"
-            :add="item.add"
-          ></KanbanCard>
+        <v-col cols="4" v-for="item in items" :key="item.code">
+          <v-card class="card-container" @click="goToBoard()">
+            <KanbanCard 
+              :cardName="item.name"
+              :subjects="item.subjects"
+              :activities="item.activities"
+              :students="item.students"
+              :progress="item.progress"
+              :add="item.add"
+            ></KanbanCard>
+          </v-card>
         </v-col>
 
         <v-col cols="4">
@@ -103,5 +105,9 @@ import KanbanCard from './KanbanCard.vue';
 <style>
   .kanban-card {
     height: 190px !important;
+  }
+
+  .card-container .container{
+    padding: 0px 0px !important;
   }
 </style>

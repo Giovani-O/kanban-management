@@ -1,6 +1,6 @@
 <template>
   <v-container>
-      <v-card class="pa-4 card-height" :color="selectColor">
+      <v-card class="py-4 px-6 card-height" :color="selectColor">
         <v-row>
           <v-col 
             cols="12" 
