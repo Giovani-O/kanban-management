@@ -10,7 +10,6 @@
               :cardName="item.name"
               :subjects="item.subjects"
               :activities="item.activities"
-              :students="item.students"
               :progress="item.progress"
               :add="item.add"
             ></KanbanCard>
@@ -52,62 +51,50 @@
 </template>
 
 <script>
+import axios from "axios";
 import KanbanCard from './KanbanCard.vue';
 
   export default {
     name: 'KanbanDashboard',
     data() {
       return {
-        items: [
-          {
-            code: 1,
-            name: 'Quadro 1',
-            subjects: 'Subjects',
-            activities: 'Activities',
-            students: 'Students',
-            progress: 'Progress',
-          },
-          {
-            code: 2,
-            name: 'Quadro 2',
-            subjects: 'Subjects',
-            activities: 'Activities',
-            students: 'Students',
-            progress: 'Progress',
-          },
-          {
-            code: 3,
-            name: 'Quadro 3',
-            subjects: 'Subjects',
-            activities: 'Activities',
-            students: 'Students',
-            progress: 'Progress',
-          },
-          {
-            code: 4,
-            name: 'Quadro 4',
-            subjects: 'Subjects',
-            activities: 'Activities',
-            students: 'Students',
-            progress: 'Progress',
-          },
-          {
-            code: 5,
-            name: 'Quadro 5',
-            subjects: 'Subjects',
-            activities: 'Activities',
-            students: 'Students',
-            progress: 'Progress',
-          }
-        ]
+        items: []
       }
     },
     components: {
       KanbanCard,
     },
+    mounted() {
+      this.getBoards();
+    },
     methods: {
       goToBoard(){
         this.$router.push('/kanban/board');
+      },
+
+      getBoards() {
+        this.loading = true;
+        axios
+          .get(
+            `https://localhost:5001/v1/Board/Get`,
+            { headers: this.axiosHeaders }
+          )
+          .then(response => {
+            response.data.forEach(x => {
+              var loadedBoard = {
+                code: x.id,
+                name: x.name,
+                subjects: x.subject,
+                activities: 'N Atividades',
+                progress: x.status,
+              };
+              this.items.push(loadedBoard);
+            })
+          })
+          .catch(error => {
+            console.log("ＳＹＳＴＥＭ　ＥＲＲＯＲ: " + error)
+          })
+          .finally(() => this.loading = false)
       }
     }
   }

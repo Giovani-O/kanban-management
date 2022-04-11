@@ -24,14 +24,7 @@
           </v-col>
 
           <v-col 
-            cols="6" 
-            class="mt-2 mb-0 mx-0 pa-0"
-          >
-            <p>{{ students }}</p>
-          </v-col>
-
-          <v-col 
-            cols="6" 
+            cols="12" 
             class="mt-2 mb-0 ml-0 mr-0 pa-0 text-right"
           >
             <p>{{ progress }}</p>
@@ -55,10 +48,6 @@
         default: '',
       },
       activities: {
-        type: String,
-        default: '',
-      },
-      students: {
         type: String,
         default: '',
       },
