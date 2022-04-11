@@ -17,7 +17,7 @@
         </v-col>
 
         <v-col cols="4">
-          <v-card class="card-container">
+          <v-card class="card-container" @click="addBoard()">
             <v-card color="transparent" flat outlined>
               <v-row>
                 <v-col cols="12" class="text-center ma-2">
@@ -47,6 +47,36 @@
         
       </v-row>
     </v-card>
+
+    <div class="text-center">
+      <v-dialog
+        v-model="dialog"
+        width="900"
+        overlay-opacity=".95"
+        overlay-color="black"
+        dark
+        transition="dialog-bottom-transition"
+        class="pa-4"
+        :scrollable="false"
+      >
+        <template> 
+          <h1 style="color: white">Descreva a atividade</h1>
+          
+          <v-text-field color="#771cff" label="Nome" v-model="name"></v-text-field>
+          <v-select :items="subject" v-model="selectedSubject" label="Disciplinas" color="#771cff"></v-select>
+          <v-select :items="status" v-model="selectedStatus" label="Status" color="#771cff"></v-select>
+          <v-btn 
+            dark color="transparent" 
+            class="rounded-pill action-btn mr-4"
+            style="border: 1px solid !important; border-color: #771cff !important;"
+            @click="saveBoard()"
+            width="100px"
+          >
+            Salvar
+          </v-btn>
+        </template>
+      </v-dialog>
+    </div>
   </v-container>
 </template>
 
@@ -58,7 +88,26 @@ import KanbanCard from './KanbanCard.vue';
     name: 'KanbanDashboard',
     data() {
       return {
-        items: []
+        items: [],
+        subject: [
+          'TCC',
+          'Desenvolvimento Web',
+          'Sistemas Distribuídos',
+          'Projeto Integrador de Programação',
+          'Gestão de novos negócios',
+        ],
+        status: [
+          'Em fila',
+          'Em progresso',
+          'Finalizado'
+        ],
+        name: '',
+        selectedSubject: '',
+        selectedStatus: '',
+        dialog: false,
+        axiosHeaders: {
+          'Content-Type': 'application/json',
+        },
       }
     },
     components: {
@@ -95,7 +144,34 @@ import KanbanCard from './KanbanCard.vue';
             console.log("ＳＹＳＴＥＭ　ＥＲＲＯＲ: " + error)
           })
           .finally(() => this.loading = false)
-      }
+      },
+      addBoard() {
+        this.dialog = !this.dialog;
+      },
+      saveBoard() {
+        axios
+          .post(
+            `https://localhost:5001/v1/Board/Save`,
+            {
+              Name: this.name,
+              Subject: this.selectedSubject,
+              Status: this.selectedStatus,
+            },
+            { headers: this.axiosHeaders }
+          )
+          .then(response => {
+            this.name = '';
+            this.selectedSubject = '',
+            this.selectedStatus = '',
+            this.items = [],
+            this.getBoards();
+            this.dialog = false;
+          })
+          .catch(error => {
+            console.log("ＳＹＳＴＥＭ　ＥＲＲＯＲ: " + error)
+          })
+          .finally(() => {this.loading = false; this.currentColumn = '-1';})
+      },
     }
   }
 </script>

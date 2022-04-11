@@ -109,3 +109,4 @@ C:\Users\giova\OneDrive\Documents\UNASP\proj_int_2022-grupo-04\Development\api\o
 C:\Users\giova\OneDrive\Documents\UNASP\proj_int_2022-grupo-04\Development\api\obj\Debug\net5.0\ref\API.dll
 C:\Users\giova\OneDrive\Documents\UNASP\proj_int_2022-grupo-04\Development\api\obj\Debug\net5.0\API.pdb
 C:\Users\giova\OneDrive\Documents\UNASP\proj_int_2022-grupo-04\Development\api\obj\Debug\net5.0\API.genruntimeconfig.cache
+C:\Users\Work\Desktop\Projeto\proj_int_2022-grupo-04\Development\api\bin\Debug\net5.0\API.StaticWebAssets.xml
