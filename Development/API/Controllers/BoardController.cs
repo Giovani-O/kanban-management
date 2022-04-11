@@ -24,7 +24,31 @@ namespace API.Controllers
               .AsNoTracking()
               .ToListAsync();
 
-            return Ok(boards);
+              // declarar uma nova lista (boardResult);
+            // var boardResult = new List<object>();
+
+            // foreach na vaariável boards;
+            // novo objeto, atribuir os valores do quadro atual 
+            // + select todas atividades que tenham o BoardId == Id do quadro atual;
+            // Salvar select em uma lista/array;
+            // pegar quantidade de elementos na lista/arrat;
+
+            // add na lista boardResult
+            // trocar no return, boards por boardResult;
+            var boardResult = new List<object>();
+            foreach(var item in board){
+              var activity = new List<object>();
+              activity = context.Activities.Where(x => x.BoardId == item.Id).Count();
+              var currentBoard = new {
+                name = item.Name,
+                subject = item.Subject,
+                status = item.Status,
+                activityCount = activity + " Atividade(s) "
+              };
+              boardResult.Add(currentBoard);
+
+            }
+            return Ok(currentBoard);
         }
 
         [HttpGet]

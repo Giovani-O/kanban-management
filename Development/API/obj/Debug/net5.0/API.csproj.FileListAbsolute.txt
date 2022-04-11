@@ -110,3 +110,12 @@ C:\Users\giova\OneDrive\Documents\UNASP\proj_int_2022-grupo-04\Development\api\o
 C:\Users\giova\OneDrive\Documents\UNASP\proj_int_2022-grupo-04\Development\api\obj\Debug\net5.0\API.pdb
 C:\Users\giova\OneDrive\Documents\UNASP\proj_int_2022-grupo-04\Development\api\obj\Debug\net5.0\API.genruntimeconfig.cache
 C:\Users\Work\Desktop\Projeto\proj_int_2022-grupo-04\Development\api\bin\Debug\net5.0\API.StaticWebAssets.xml
+C:\Users\titip\Desktop\Projeto\proj_int_2022-grupo-04\Development\api\obj\Debug\net5.0\API.csproj.AssemblyReference.cache
+C:\Users\titip\Desktop\Projeto\proj_int_2022-grupo-04\Development\api\obj\Debug\net5.0\API.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\titip\Desktop\Projeto\proj_int_2022-grupo-04\Development\api\obj\Debug\net5.0\API.AssemblyInfoInputs.cache
+C:\Users\titip\Desktop\Projeto\proj_int_2022-grupo-04\Development\api\obj\Debug\net5.0\API.AssemblyInfo.cs
+C:\Users\titip\Desktop\Projeto\proj_int_2022-grupo-04\Development\api\obj\Debug\net5.0\API.csproj.CoreCompileInputs.cache
+C:\Users\titip\Desktop\Projeto\proj_int_2022-grupo-04\Development\api\obj\Debug\net5.0\API.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\titip\Desktop\Projeto\proj_int_2022-grupo-04\Development\api\obj\Debug\net5.0\API.dll
+C:\Users\titip\Desktop\Projeto\proj_int_2022-grupo-04\Development\api\obj\Debug\net5.0\ref\API.dll
+C:\Users\titip\Desktop\Projeto\proj_int_2022-grupo-04\Development\api\obj\Debug\net5.0\API.pdb
