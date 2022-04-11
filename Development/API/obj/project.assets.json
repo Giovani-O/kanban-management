@@ -6224,11 +6224,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\giova\\OneDrive\\documents\\unasp\\proj_int_2022-grupo-04\\Development\\api\\API.csproj",
+      "projectUniqueName": "C:\\Users\\giova\\OneDrive\\Documents\\UNASP\\proj_int_2022-grupo-04\\Development\\api\\API.csproj",
       "projectName": "API",
-      "projectPath": "C:\\Users\\giova\\OneDrive\\documents\\unasp\\proj_int_2022-grupo-04\\Development\\api\\API.csproj",
+      "projectPath": "C:\\Users\\giova\\OneDrive\\Documents\\UNASP\\proj_int_2022-grupo-04\\Development\\api\\API.csproj",
       "packagesPath": "C:\\Users\\giova\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\giova\\OneDrive\\documents\\unasp\\proj_int_2022-grupo-04\\Development\\api\\obj\\",
+      "outputPath": "C:\\Users\\giova\\OneDrive\\Documents\\UNASP\\proj_int_2022-grupo-04\\Development\\api\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\giova\\AppData\\Roaming\\NuGet\\NuGet.Config"

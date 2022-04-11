@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "XRuYj6KLTu4k3fpVgeBZRDQ4x8ZN2LgKP2WXa9fxz1VPEgGyitg0LaT3KUDeI+ckrzgZOKJvuFbsAYBCjB3t6A==",
+  "dgSpecHash": "GCGJM/J5YFuaE5h6KFd9cI2X098HSeOfHXoJpcAn+5aWW2Te0Cige4oVq1Qg6XI6ZYMT0QouGeUIDfCorR26Xg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\giova\\OneDrive\\documents\\unasp\\proj_int_2022-grupo-04\\Development\\api\\API.csproj",
+  "projectFilePath": "C:\\Users\\giova\\OneDrive\\Documents\\UNASP\\proj_int_2022-grupo-04\\Development\\api\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\giova\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\giova\\.nuget\\packages\\microsoft.aspnet.cors\\5.2.7\\microsoft.aspnet.cors.5.2.7.nupkg.sha512",

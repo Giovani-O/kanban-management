@@ -18,20 +18,31 @@
         </v-col>
 
         <v-col cols="4">
-          <v-card color="transparent" flat outlined class="mr-4">
-            <v-row>
-              <v-col cols="12" class="text-center ma-2">
-                <v-card class="kanban-card">
-                  <span>Adicionar quadro</span>
-                  <v-icon
-                    large
-                    color="white"
+          <v-card class="card-container">
+            <v-card color="transparent" flat outlined>
+              <v-row>
+                <v-col cols="12" class="text-center ma-2">
+                  <v-card 
+                    class="kanban-card" 
+                    style="
+                      border: 2px dashed rgb(63, 63, 63) !important; 
+                      display: flex !important;
+                      align-items: center !important;
+                      justify-content: center;
+                      cursor: pointer !important;
+                    "
                   >
-                    mdi-plus-box-outline
-                  </v-icon>
-                </v-card>
-              </v-col>
-            </v-row>
+                    <span>Adicionar quadro</span>
+                    <v-icon
+                      large
+                      color="white"
+                    >
+                      mdi-plus-box-outline
+                    </v-icon>
+                  </v-card>
+                </v-col>
+              </v-row>
+            </v-card>
           </v-card>
         </v-col>
         
@@ -109,5 +120,9 @@ import KanbanCard from './KanbanCard.vue';
 
   .card-container .container{
     padding: 0px 0px !important;
+  }
+
+  .row .text-center {
+    margin: 0px 0px !important;
   }
 </style>
