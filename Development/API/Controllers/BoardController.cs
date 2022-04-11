@@ -24,31 +24,20 @@ namespace API.Controllers
               .AsNoTracking()
               .ToListAsync();
 
-              // declarar uma nova lista (boardResult);
-            // var boardResult = new List<object>();
-
-            // foreach na vaariável boards;
-            // novo objeto, atribuir os valores do quadro atual 
-            // + select todas atividades que tenham o BoardId == Id do quadro atual;
-            // Salvar select em uma lista/array;
-            // pegar quantidade de elementos na lista/arrat;
-
-            // add na lista boardResult
-            // trocar no return, boards por boardResult;
             var boardResult = new List<object>();
-            foreach(var item in board){
-              var activity = new List<object>();
-              activity = context.Activities.Where(x => x.BoardId == item.Id).Count();
+            foreach(var item in boards){
+              var activity = new List<Activity>();
+              activity = await context.Activities.FromSqlRaw($"SELECT * FROM Activities WHERE boardId = {item.Id}").ToListAsync();
               var currentBoard = new {
                 name = item.Name,
                 subject = item.Subject,
                 status = item.Status,
-                activityCount = activity + " Atividade(s) "
+                activityCount = activity.Count + " Atividade(s) "
               };
               boardResult.Add(currentBoard);
 
             }
-            return Ok(currentBoard);
+            return Ok(boardResult);
         }
 
         [HttpGet]

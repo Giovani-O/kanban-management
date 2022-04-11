@@ -134,7 +134,7 @@ import KanbanCard from './KanbanCard.vue';
                 code: x.id,
                 name: x.name,
                 subjects: x.subject,
-                activities: 'N Atividades',
+                activities: x.activityCount,
                 progress: x.status,
               };
               this.items.push(loadedBoard);
