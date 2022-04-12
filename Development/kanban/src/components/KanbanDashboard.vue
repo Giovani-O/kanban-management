@@ -83,12 +83,15 @@
 <script>
 import axios from "axios";
 import KanbanCard from './KanbanCard.vue';
-import { bus } from '@/main'
+import { useBoardStore } from '@/store/boardStore';
+import { mapState } from "pinia";
+import { bus } from '@/main';
 
   export default {
     name: 'KanbanDashboard',
     data() {
       return {
+        boardStore: '',
         items: [],
         subject: [
           'TCC',
@@ -115,10 +118,13 @@ import { bus } from '@/main'
       KanbanCard,
     },
     mounted() {
+      this.boardStore = useBoardStore();
       this.getBoards();
+
     },
     methods: {
       goToBoard(code){
+        this.boardStore.setId(code);
         this.$router.push('/kanban/board');
       },
 

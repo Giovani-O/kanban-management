@@ -89,12 +89,15 @@
 
 <script>
   import axios from "axios";
-  import { bus } from '@/main'
+  import { useBoardStore } from '@/store/boardStore';
+  import { mapState } from "pinia";
+  import { bus } from '@/main';
 
   export default {
     name: 'KanbanBoard',
     data() {
       return {
+        boardStore: '',
         axiosHeaders: {
           'Content-Type': 'application/json',
         },
@@ -113,6 +116,8 @@
       }
     },
     mounted() {
+      this.boardStore = useBoardStore();
+      this.boardId = this.boardStore.getId;
       this.getTodo();
     },
     methods: {
@@ -125,9 +130,9 @@
           )
           .then(response => {
             response.data.forEach(x => {
-              if (x.column == '0' /* && x.boardId == this.boardId */) this.todo.push(x);
-              if (x.column == '1' /* && x.boardId == this.boardId */) this.progress.push(x);
-              if (x.column == '2' /* && x.boardId == this.boardId */) this.finished.push(x);
+              if (x.column == '0' && x.boardId == this.boardId) this.todo.push(x);
+              if (x.column == '1' && x.boardId == this.boardId) this.progress.push(x);
+              if (x.column == '2' && x.boardId == this.boardId) this.finished.push(x);
             })
           })
           .catch(error => {
@@ -145,7 +150,7 @@
           .post(
             `https://localhost:5001/v1/Save`,
             {
-              BoardId: 1,
+              BoardId: this.boardId,
               Text: this.description,
               Column: this.currentColumn,
             },
