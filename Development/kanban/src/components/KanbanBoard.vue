@@ -1,6 +1,34 @@
 <template>
   <v-container>
-    <h1>Quadro</h1>
+    <v-row>
+      <v-col cols="10">
+        <h1>Quadro</h1>
+      </v-col>
+      <v-col cols="2">
+        <!-- <v-btn color="#771cff">Enviar arquivo</v-btn> -->
+        <div class="text-center">
+          <v-menu offset-y>
+            <template v-slot:activator="{ on, attrs }">
+              <v-btn
+                color="#771cff"
+                v-bind="attrs"
+                v-on="on"
+              >
+                Enviar Arquivo
+              </v-btn>
+            </template>
+            <v-list>
+              <v-list-item
+                v-for="(item, index) in items"
+                :key="index"
+              >
+                <v-list-item-title>{{ item.title }}</v-list-item-title>
+              </v-list-item>
+            </v-list>
+          </v-menu>
+        </div>
+      </v-col>
+    </v-row>
     <v-card color="transparent" flat class="pa-4">
       <v-row>
         <v-col cols="4">
