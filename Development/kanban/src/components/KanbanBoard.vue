@@ -89,6 +89,7 @@
 
 <script>
   import axios from "axios";
+  import { bus } from '@/main'
 
   export default {
     name: 'KanbanBoard',
@@ -102,6 +103,7 @@
         dialog: false,
         description: '',
         currentColumn: '-1',
+        boardId: '',
         // Em fila
         todo: [],
         // Em progresso
@@ -114,7 +116,6 @@
       this.getTodo();
     },
     methods: {
-
       getTodo(){
         this.loading = true;
         axios
@@ -123,11 +124,10 @@
             { headers: this.axiosHeaders }
           )
           .then(response => {
-            // this.todo = response.data;
             response.data.forEach(x => {
-              if (x.column == '0') this.todo.push(x);
-              if (x.column == '1') this.progress.push(x);
-              if (x.column == '2') this.finished.push(x);
+              if (x.column == '0' /* && x.boardId == this.boardId */) this.todo.push(x);
+              if (x.column == '1' /* && x.boardId == this.boardId */) this.progress.push(x);
+              if (x.column == '2' /* && x.boardId == this.boardId */) this.finished.push(x);
             })
           })
           .catch(error => {

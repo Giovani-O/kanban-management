@@ -29,6 +29,7 @@ namespace API.Controllers
               var activity = new List<Activity>();
               activity = await context.Activities.FromSqlRaw($"SELECT * FROM Activities WHERE boardId = {item.Id}").ToListAsync();
               var currentBoard = new {
+                id = item.Id,
                 name = item.Name,
                 subject = item.Subject,
                 status = item.Status,

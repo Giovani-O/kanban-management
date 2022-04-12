@@ -5,7 +5,7 @@
     <v-card class="mt-6" flat color="transparent">
       <v-row>
         <v-col cols="4" v-for="item in items" :key="item.code">
-          <v-card class="card-container" @click="goToBoard()">
+          <v-card class="card-container" @click="goToBoard(item.code)">
             <KanbanCard 
               :cardName="item.name"
               :subjects="item.subjects"
@@ -83,6 +83,7 @@
 <script>
 import axios from "axios";
 import KanbanCard from './KanbanCard.vue';
+import { bus } from '@/main'
 
   export default {
     name: 'KanbanDashboard',
@@ -117,7 +118,7 @@ import KanbanCard from './KanbanCard.vue';
       this.getBoards();
     },
     methods: {
-      goToBoard(){
+      goToBoard(code){
         this.$router.push('/kanban/board');
       },
 
