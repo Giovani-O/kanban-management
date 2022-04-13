@@ -5,28 +5,7 @@
         <h1>Quadro</h1>
       </v-col>
       <v-col cols="2">
-        <!-- <v-btn color="#771cff">Enviar arquivo</v-btn> -->
-        <div class="text-center">
-          <v-menu offset-y>
-            <template v-slot:activator="{ on, attrs }">
-              <v-btn
-                color="#771cff"
-                v-bind="attrs"
-                v-on="on"
-              >
-                Enviar Arquivo
-              </v-btn>
-            </template>
-            <v-list>
-              <v-list-item
-                v-for="(item, index) in items"
-                :key="index"
-              >
-                <v-list-item-title>{{ item.title }}</v-list-item-title>
-              </v-list-item>
-            </v-list>
-          </v-menu>
-        </div>
+        <v-btn color="#771cff" @click="addFile()">Enviar arquivo</v-btn>
       </v-col>
     </v-row>
     <v-card color="transparent" flat class="pa-4">
@@ -112,6 +91,38 @@
       </v-dialog>
     </div>
 
+    <div class="text-center">
+      <v-dialog
+        v-model="fileDialog"
+        width="900"
+        overlay-opacity=".95"
+        overlay-color="black"
+        dark
+        transition="dialog-bottom-transition"
+        class="pa-4"
+        :scrollable="false"
+      >
+        <template> 
+          <h1 style="color: white">Entregar atividade</h1>
+          <v-file-input
+            label="Arquivo(s)"
+            multiple
+            small-chips
+            color="#771cff"
+          ></v-file-input>
+          <v-text-field color="#771cff" label="Descrição"></v-text-field>
+          <v-btn 
+            dark color="transparent" 
+            class="rounded-pill action-btn mr-4"
+            style="border: 1px solid !important; border-color: #771cff !important;"
+            width="100px"
+          >
+            Salvar
+          </v-btn>
+        </template>
+      </v-dialog>
+    </div>
+
   </v-container>
 </template>
 
@@ -132,6 +143,7 @@
 
         loading: false,
         dialog: false,
+        fileDialog: false,
         description: '',
         currentColumn: '-1',
         boardId: '',
@@ -172,6 +184,9 @@
       addActivity(boardId) {
         this.currentColumn = boardId;
         this.dialog = !this.dialog;
+      },
+      addFile() {
+        this.fileDialog = !this.fileDialog;
       },
       saveActivity() {
         axios
