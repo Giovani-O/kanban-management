@@ -73,7 +73,6 @@
 </template>
 
 <script>
-// JavaScript, lógica do front-end
   export default {
     data() { 
       return {

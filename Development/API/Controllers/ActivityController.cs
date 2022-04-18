@@ -18,7 +18,9 @@ namespace API.Controllers
 
     [HttpGet]
     [Route("Get")]
-    public async Task<IActionResult> Get([FromServices] AppDBC context)
+    public async Task<IActionResult> Get(
+      [FromServices] AppDBC context
+    )
     {
       var activities = await context
         .Activities
