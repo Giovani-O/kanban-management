@@ -1,25 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\giova\\OneDrive\\Documents\\UNASP\\proj_int_2022-grupo-04\\Development\\api\\API.csproj": {}
+    "C:\\Users\\Work\\Desktop\\Projeto\\proj_int_2022-grupo-04\\Development\\api\\API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\giova\\OneDrive\\Documents\\UNASP\\proj_int_2022-grupo-04\\Development\\api\\API.csproj": {
+    "C:\\Users\\Work\\Desktop\\Projeto\\proj_int_2022-grupo-04\\Development\\api\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\giova\\OneDrive\\Documents\\UNASP\\proj_int_2022-grupo-04\\Development\\api\\API.csproj",
+        "projectUniqueName": "C:\\Users\\Work\\Desktop\\Projeto\\proj_int_2022-grupo-04\\Development\\api\\API.csproj",
         "projectName": "API",
-        "projectPath": "C:\\Users\\giova\\OneDrive\\Documents\\UNASP\\proj_int_2022-grupo-04\\Development\\api\\API.csproj",
-        "packagesPath": "C:\\Users\\giova\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\giova\\OneDrive\\Documents\\UNASP\\proj_int_2022-grupo-04\\Development\\api\\obj\\",
+        "projectPath": "C:\\Users\\Work\\Desktop\\Projeto\\proj_int_2022-grupo-04\\Development\\api\\API.csproj",
+        "packagesPath": "C:\\Users\\Work\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Work\\Desktop\\Projeto\\proj_int_2022-grupo-04\\Development\\api\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\giova\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Work\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -63,6 +68,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[5.0.15, 5.0.15]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -71,7 +82,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -4,7 +4,7 @@
         <v-row>
           <v-col 
             cols="12" 
-            class="mt-2 mb-0 mx-0 pa-0"
+            class="mt-0 mb-0 mx-0 pa-0"
           >
             <h4>{{ cardName }}</h4>
           </v-col>
@@ -18,14 +18,21 @@
 
           <v-col 
             cols="12" 
-            class="mt-2 mb-0 mx-0 pa-0"
+            class="mt-0 mb-0 mx-0 pa-0"
+          >
+            <p>{{ teacher }}</p>
+          </v-col>
+
+          <v-col 
+            cols="12" 
+            class="mt-0 mb-0 mx-0 pa-0"
           >
             <p>{{ activities }}</p>
           </v-col>
 
           <v-col 
             cols="12" 
-            class="mt-2 mb-0 ml-0 mr-0 pa-0 text-right"
+            class="mt-0 mb-0 ml-0 mr-0 pa-0 text-right"
           >
             <p>{{ progress }}</p>
           </v-col>
@@ -44,6 +51,10 @@
         default: '',
       },
       subjects: {
+        type: String,
+        default: '',
+      },
+      teacher: {
         type: String,
         default: '',
       },
@@ -83,6 +94,6 @@
   }
 
   .card-height {
-    height: 190px !important;
+    height: 200px !important;
   }
 </style>

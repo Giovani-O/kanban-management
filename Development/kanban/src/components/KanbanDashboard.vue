@@ -9,6 +9,7 @@
             <KanbanCard 
               :cardName="item.name"
               :subjects="item.subjects"
+              :teacher="item.teacher"
               :activities="item.activities"
               :progress="item.progress"
               :add="item.add"
@@ -60,7 +61,7 @@
         :scrollable="false"
       >
         <template> 
-          <h1 style="color: white">Descreva a atividade</h1>
+          <h1 style="color: white">Descreva o quadro</h1>
           
           <v-text-field color="#771cff" label="Nome" v-model="name"></v-text-field>
           <v-select :items="subject" v-model="selectedSubject" label="Disciplinas" color="#771cff"></v-select>
@@ -141,6 +142,7 @@ import { bus } from '@/main';
                 code: x.id,
                 name: x.name,
                 subjects: x.subject,
+                teacher: "Prof. Igor Henry de Paula",
                 activities: x.activityCount,
                 progress: x.status,
               };
@@ -185,7 +187,7 @@ import { bus } from '@/main';
 
 <style>
   .kanban-card {
-    height: 190px !important;
+    height: 200px !important;
   }
 
   .card-container .container{

@@ -20,8 +20,14 @@
 
           <v-card class="pa-1 column-card">
             <v-card draggable class="activity" v-for="item in todo" :key="item.id">
-              <p>
+              <h3>
                 {{ item.text }}
+              </h3>
+              <p>
+                Descrição...
+              </p>
+              <p>
+                Início: 25/04  -  Fim: 30/04
               </p>
             </v-card>
           </v-card>
@@ -37,8 +43,14 @@
 
           <v-card class="pa-1 column-card">
             <v-card draggable class="activity" v-for="item in progress" :key="item.id">
-              <p>
+              <h3>
                 {{ item.text }}
+              </h3>
+              <p>
+                Descrição...
+              </p>
+              <p>
+                Início: 25/04  -  Fim: 30/04
               </p>
             </v-card>
           </v-card>
@@ -54,8 +66,14 @@
 
           <v-card class="pa-1 column-card">
             <v-card draggable class="activity" v-for="item in finished" :key="item.id">
-              <p>
+              <h3>
                 {{ item.text }}
+              </h3>
+              <p>
+                Descrição...
+              </p>
+              <p>
+                Início: 25/04  -  Fim: 30/04
               </p>
             </v-card>
           </v-card>
@@ -77,7 +95,12 @@
         <template> 
           <h1 style="color: white">Descreva a atividade</h1>
           
-          <v-text-field color="#771cff" label="Descrição" v-model="description"></v-text-field>
+          <v-row>
+            <v-col cols="12"><v-text-field color="#771cff" label="Nome" v-model="name"></v-text-field></v-col>
+            <v-col cols="12"><v-text-field color="#771cff" label="Descrição" v-model="description"></v-text-field></v-col>
+            <v-col cols="6"><v-text-field color="#771cff" label="Data de início" v-model="startDate"></v-text-field></v-col>
+            <v-col cols="6"><v-text-field color="#771cff" label="Data de fim" v-model="endDate"></v-text-field></v-col>
+          </v-row>
           <v-btn 
             dark color="transparent" 
             class="rounded-pill action-btn mr-4"
