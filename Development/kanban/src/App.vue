@@ -59,13 +59,19 @@
     </v-navigation-drawer>
 
     <v-app-bar app class="frame-color" clipped-left>
-      <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon v-if="$route.name != 'Login'" @click="drawer = !drawer"></v-app-bar-nav-icon>
 
-      <v-toolbar-title>Kanban</v-toolbar-title>
+      <v-toolbar-title>
+        <v-img
+          src="./assets/logo.png"
+          max-height="45px"
+          max-width="150px"
+        ></v-img>
+      </v-toolbar-title>
     </v-app-bar>
 
     <v-main 
-      class="mb-16 pb-10"
+      class="mb-0 pb-0"
     >
       <router-view></router-view>
     </v-main>
@@ -78,6 +84,9 @@
       return {
         drawer: null,
       }
+    },
+    created() {
+      if (this.$route.name == 'Login') this.drawer = false;
     },
     methods: {
       goToKanban() { 
