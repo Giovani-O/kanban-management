@@ -86,7 +86,7 @@
       }
     },
     created() {
-      if (this.$route.name == 'Login') this.drawer = false;
+      if (this.$route.name == 'Login' || this.$route.name == 'Registro') this.drawer = false;
     },
     methods: {
       goToKanban() { 

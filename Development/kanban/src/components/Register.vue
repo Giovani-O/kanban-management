@@ -1,10 +1,15 @@
 <template class="main">
   <v-container class="background d-flex align-center justify-center">
     <v-card width="40%" height="71vh" class="mt-12 mb-12 pa-4" color="rgb(0, 0, 0, 0.7)">
-      <h1>Login</h1>
-      <v-text-field color="#771cff" label="E-mail" type="email"></v-text-field>
+      <h1>Criar conta</h1>
 
+      <v-text-field color="#771cff" label="Nome" type="name"></v-text-field>
+      <v-text-field color="#771cff" label="E-mail" type="email"></v-text-field>
       <v-text-field color="#771cff" label="Senha" type="password"></v-text-field>
+      <v-switch
+        color="#771cff"
+        label="Professor?"
+      ></v-switch>
 
       <v-row>
         <v-col cols="6">
@@ -15,10 +20,6 @@
         </v-col>
       </v-row>
 
-      <v-img
-        class="mt-14"
-        src="../assets/logo.png"
-      ></v-img>
     </v-card>
   </v-container>
 </template>

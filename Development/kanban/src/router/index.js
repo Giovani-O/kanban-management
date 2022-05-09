@@ -3,6 +3,7 @@ import VueRouter from 'vue-router';
 import KanbanDashboard from '../components/KanbanDashboard.vue';
 import SettingsDashboard from '../components/SettingsDashboard.vue';
 import Login from '../components/Login.vue';
+import Register from '../components/Register.vue';
 import KanbanBoard from '../components/KanbanBoard'
 
 Vue.use(VueRouter)
@@ -24,6 +25,12 @@ const routes = [
     path: '/login',
     name: 'Login',
     component: Login,
+    props: true,
+  }, 
+  {
+    path: '/register',
+    name: 'Registro',
+    component: Register,
     props: true,
   }, 
   {
