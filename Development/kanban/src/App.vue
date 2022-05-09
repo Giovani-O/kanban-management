@@ -59,7 +59,7 @@
     </v-navigation-drawer>
 
     <v-app-bar app class="frame-color" clipped-left>
-      <v-app-bar-nav-icon v-if="$route.name != 'Login'" @click="drawer = !drawer"></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon v-if="$route.name != 'Login' && $route.name != 'Registro'" @click="drawer = !drawer"></v-app-bar-nav-icon>
 
       <v-toolbar-title>
         <v-img

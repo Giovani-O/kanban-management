@@ -12,11 +12,8 @@
       ></v-switch>
 
       <v-row>
-        <v-col cols="6">
-          <v-btn width="100%" color="#771cff">Login</v-btn>
-        </v-col>
-        <v-col cols="6">
-          <v-btn width="100%" color="#222222">Criar conta</v-btn>
+        <v-col cols="12">
+          <v-btn width="100%" color="#771cff">Registrar</v-btn>
         </v-col>
       </v-row>
 
@@ -26,7 +23,7 @@
 
 <script>
   export default {
-    name: 'Login',
+    name: 'Register',
     data() {
       return {
 
