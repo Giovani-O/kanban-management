@@ -15,6 +15,7 @@ namespace API.Data
     /// <summary/>
     public DbSet<Board> Boards { get; set; }
 
+    public DbSet<User> Users { get; set; }
     protected override void OnConfiguring(
       DbContextOptionsBuilder optionsBuilder) 
       => optionsBuilder.UseSqlite(connectionString: "DataSource=app.db;Cache=Shared");
