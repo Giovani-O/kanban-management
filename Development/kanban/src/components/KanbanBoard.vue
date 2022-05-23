@@ -21,7 +21,7 @@
           <v-card class="pa-1 column-card">
             <v-card draggable class="activity" v-for="item in todo" :key="item.id">
               <h3>
-                {{ item.text }}
+                <v-icon @click="deleteTask(item.id)">mdi-delete</v-icon> {{ item.text }} 
               </h3>
               <p>
                 Descrição...
@@ -44,7 +44,7 @@
           <v-card class="pa-1 column-card">
             <v-card draggable class="activity" v-for="item in progress" :key="item.id">
               <h3>
-                {{ item.text }}
+                <v-icon @click="deleteTask(item.id)">mdi-delete</v-icon> {{ item.text }}
               </h3>
               <p>
                 Descrição...
@@ -67,7 +67,7 @@
           <v-card class="pa-1 column-card">
             <v-card draggable class="activity" v-for="item in finished" :key="item.id">
               <h3>
-                {{ item.text }}
+                <v-icon @click="deleteTask(item.id)">mdi-delete</v-icon> {{ item.text }}
               </h3>
               <p>
                 Descrição...
@@ -96,10 +96,10 @@
           <h1 style="color: white">Descreva a atividade</h1>
           
           <v-row>
-            <v-col cols="12"><v-text-field color="#771cff" label="Nome" v-model="name"></v-text-field></v-col>
-            <v-col cols="12"><v-text-field color="#771cff" label="Descrição" v-model="description"></v-text-field></v-col>
-            <v-col cols="6"><v-text-field color="#771cff" label="Data de início" v-model="startDate"></v-text-field></v-col>
-            <v-col cols="6"><v-text-field color="#771cff" label="Data de fim" v-model="endDate"></v-text-field></v-col>
+            <v-col cols="12"><v-text-field color="#771cff" label="Nome" v-model="description"></v-text-field></v-col>
+            <v-col cols="12"><v-text-field color="#771cff" label="Descrição"></v-text-field></v-col>
+            <v-col cols="6"><v-text-field color="#771cff" label="Data de início"></v-text-field></v-col>
+            <v-col cols="6"><v-text-field color="#771cff" label="Data de fim"></v-text-field></v-col>
           </v-row>
           <v-btn 
             dark color="transparent" 
@@ -234,6 +234,24 @@
             console.log("ＳＹＳＴＥＭ　ＥＲＲＯＲ: " + error)
           })
           .finally(() => {this.loading = false; this.currentColumn = '-1';})
+      },
+      deleteTask(id) {
+        axios.post(
+          'https://localhost:5001/v1/Delete',
+          {
+            ActivityId: id,
+          },
+          { headers: this.axiosHeaders }
+        )
+        .then(response => {
+            this.description = '';
+            this.todo = [];
+            this.progress = [];
+            this.finished = [];
+            this.getTodo();
+            this.dialog = false;
+        })
+        .finally(() => {this.loading = false; this.currentColumn = '-1';})
       }
 
     }
